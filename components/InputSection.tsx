@@ -65,7 +65,7 @@ export const InputSection: React.FC<InputSectionProps> = ({ onGenerate, isGenera
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-slate-100">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-600"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M8 15l4 3 4-3"/></svg>
           Content Generator
@@ -75,7 +75,7 @@ export const InputSection: React.FC<InputSectionProps> = ({ onGenerate, isGenera
             variant="outline" 
             onClick={handleFetchTrends}
             disabled={isFetchingTrends || isGenerating}
-            className="text-xs sm:text-sm py-1.5 px-3"
+            className="w-full sm:w-auto text-sm py-2 sm:py-1.5 px-4 sm:px-3"
         >
           {isFetchingTrends ? (
              'Scanning...' 
@@ -90,9 +90,9 @@ export const InputSection: React.FC<InputSectionProps> = ({ onGenerate, isGenera
 
       {showTrends && (
         <div className="mb-8 bg-slate-50 rounded-xl p-4 border border-slate-200 animate-fade-in">
-          <div className="flex justify-between items-center mb-3">
-            <h3 className="font-semibold text-slate-700">Trending in Health Innovation (Last Month)</h3>
-            <button onClick={() => setShowTrends(false)} className="text-slate-400 hover:text-slate-600">
+          <div className="flex justify-between items-start gap-4 mb-3">
+            <h3 className="font-semibold text-slate-700 leading-tight">Trending in Health Innovation (Last Month)</h3>
+            <button onClick={() => setShowTrends(false)} className="text-slate-400 hover:text-slate-600 shrink-0 mt-0.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
           </div>
